@@ -6,14 +6,7 @@ class User {
 
   @override
   String toString() => "name: $name age: $age";
-}
-
-class UserManager {
-  static void processUserData(User user) {
-    user.name = user.name.toUpperCase();
-    user.age += 1;
-  }
-}
+}  
 
 class UserJsonValidator {
   static void checkValidation(Map<String, Object> json) {
@@ -45,10 +38,23 @@ class UserJsonConverter {
   }
 }
 
+class UserProcessing {
+  static void processUserData(User user) {
+    user.name = user.name.toUpperCase();
+    user.age += 1;
+  }
+}
+
 class UserRepository {
   static void saveUserData(User user) {
     print("Данные сохранены: $user");
   }
+}
+
+class UserManager {
+  User getUserFromJson(Map <String, Object> json) => UserJsonConverter.userFromJson(json);
+  void processUserData(User user) => UserProcessing.processUserData(user);
+  void saveUserData(User user) => UserRepository.saveUserData(user); 
 }
 
 class Logger {
@@ -57,12 +63,13 @@ class Logger {
   }
 }
 
-void main() {
-  final user = UserJsonConverter.userFromJson({
+void main() { 
+  final userManager = UserManager(); 
+  final user = userManager.getUserFromJson({
     'name': 'Майкл Джексон',
     'age': 24,
-  });
-  UserManager.processUserData(user);
-  UserRepository.saveUserData(user);
+  }); 
+  userManager.processUserData(user);
+  userManager.saveUserData(user); 
   Logger.log("Данные пользователя успешно обработаны и сохранены");
 }
