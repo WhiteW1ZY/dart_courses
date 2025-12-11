@@ -17,9 +17,7 @@ void main() {
 class NullableIntListCleaner {
   void makeNullEqualZero(List<int?> nullableList) {
     for(var iteration = 0; iteration < nullableList.length; iteration++) {
-      if(nullableList[iteration] == null) {
-        nullableList[iteration] = 0;
-      }
+        nullableList[iteration] ??= 0;
     }
   }
 }
@@ -39,4 +37,5 @@ class RandomIntValuesNullableListGenerator {
     }  
     return numbers;
   }
+
 }
