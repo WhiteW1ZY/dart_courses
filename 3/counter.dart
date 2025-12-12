@@ -1,9 +1,9 @@
-
 import 'dart:async';
 
 class Counter {
   int _count = 0;
   int get count => _count; 
+  Stream get stream => _streamController.stream;
 
   final _streamController = StreamController();
 
@@ -22,15 +22,13 @@ class Counter {
     else {
       _streamController.add(_count);
     }
-  }
-
-  Stream stream() => _streamController.stream;
+  } 
 }
 
 void main() { 
   final counter = Counter();
 
-  final stream = counter.stream();
+  final stream = counter.stream;
 
   stream.listen((data) =>
     print("Получены данные: $data"),
