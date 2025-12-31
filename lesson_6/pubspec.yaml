@@ -1,0 +1,37 @@
+name: home_work
+description: "A new Flutter project." 
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0 
+
+dependencies:
+  flutter:
+    sdk: flutter 
+  cupertino_icons: ^1.0.8
+  # http
+  # Этот пакет содержит набор высокоуровневых функций и классов, упрощающих работу с HTTP-ресурсами. 
+  # Он поддерживает различные платформы (мобильные устройства, настольные компьютеры и браузеры) и множество реализаций.
+  http: ^1.6.0
+  # path
+  # Пакет path предоставляет распространенные операции для работы с путями: объединение, разделение, нормализация и т. д.
+  path: ^1.9.1
+  # json_serializable:
+  # Пакет упрощает работы с сериализацией json внутри объектов 
+  json_serializable: ^6.11.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter 
+  flutter_lints: ^6.0.0 
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/images/bg.jpg
+
+  fonts: 
+    - family: Caveat
+      fonts:
+        - asset: fonts/Caveat-VariableFont_wght.ttf 
