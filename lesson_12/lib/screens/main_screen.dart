@@ -9,14 +9,22 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final weatherService = WeatherService();
+  final _weatherService = WeatherService();
 
   String responseText = "Тут мог быть Ваш прогноз погоды..";
+  bool _isLoading = false;
 
-  void getHttp() async {
+  void _fetchWeather() async {
+    if (_isLoading) {
+      return;
+    }
+    setState(() {
+      _isLoading = true;
+      responseText = "Загрузка..";
+    });
     String responseString;
     try {
-      final response = await weatherService.getWeatherForecast();
+      final response = await _weatherService.getWeatherForecast();
       responseString = "Ответ убил... ${response.toString()}";
     } catch (ex) {
       responseString = "Что-то пошло не так.. ${ex.toString()}";
@@ -34,13 +42,13 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: .center,
           children: [
             SizedBox(
-              width: 600,
+              width: 300,
               child: Text(responseText, textAlign: .justify),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                getHttp();
+                _fetchWeather();
               },
               child: const Text("Запросить прогноз"),
             ),
