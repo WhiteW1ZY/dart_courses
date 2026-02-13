@@ -1,0 +1,1 @@
+enum TodoFieldType { title, description }
