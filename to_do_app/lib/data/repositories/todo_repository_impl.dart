@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:to_do_app/data/mappers/todo_mappr/todo_mappr.dart';
 import 'package:to_do_app/data/models/todo_model/todo_model.dart';
 import 'package:to_do_app/domain/entities/todo_entity.dart';
-import 'package:to_do_app/domain/exceptions/not_found_execption.dart';
+import 'package:to_do_app/domain/exceptions/not_found_exeption.dart';
 import 'package:to_do_app/domain/repository/todo_repository.dart';
 
 @Injectable(as: TodoRepository)
@@ -68,7 +68,7 @@ class TodoRepositoryImpl implements TodoRepository {
     final data = docRef.data();
 
     if (data == null) {
-      throw NotFoundExecption(
+      throw NotFoundException(
         message:
             "User with this id $userId or todo with id $todoId was not found",
       );
@@ -76,7 +76,7 @@ class TodoRepositoryImpl implements TodoRepository {
 
     final todo = TodoModel.fromJson(data);
 
-    return _mappr.convert(todo);
+    return _mappr.nullableTodoModelToEntity(todo)!;
   }
 
   @override
@@ -95,7 +95,7 @@ class TodoRepositoryImpl implements TodoRepository {
     final data = docSnapshot.data();
 
     if (data == null) {
-      throw NotFoundExecption(
+      throw NotFoundException(
         message:
             "User with this id $userId or todo with id ${todo.id!} was not found",
       );
@@ -111,7 +111,7 @@ class TodoRepositoryImpl implements TodoRepository {
     final data = docSnapshot.data();
 
     if (data == null) {
-      throw NotFoundExecption(
+      throw NotFoundException(
         message:
             "User with this id $userId or todo with id $todoId was not found",
       );

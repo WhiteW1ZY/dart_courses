@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:to_do_app/domain/exceptions/not_found_execption.dart';
+import 'package:to_do_app/domain/exceptions/not_found_exeption.dart';
 import 'package:to_do_app/domain/repository/authorization_repository.dart';
 
 @injectable
@@ -12,7 +12,7 @@ class GetUserData {
     final userId = _authorizationRepository.currentUser?.id;
 
     if (userId == null) {
-      throw NotFoundExecption(message: "user not found");
+      throw NotFoundException(message: "user not found");
     }
 
     return userId;

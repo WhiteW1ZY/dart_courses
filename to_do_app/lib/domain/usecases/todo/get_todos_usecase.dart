@@ -12,7 +12,4 @@ class GetTodosUsecase {
 
   Stream<List<TodoEntity>> get todoStream =>
       _todoRepository.watchTodos(_getUserId.userId);
-
-  Future<TodoEntity> fetchTodoById(String todoId) async =>
-      await _todoRepository.fetchTodoById(_getUserId.userId, todoId);
 }

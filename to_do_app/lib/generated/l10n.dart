@@ -124,9 +124,14 @@ class S {
     return Intl.message('Войти', name: 'sign_in', desc: '', args: []);
   }
 
-  /// `Выйти`
-  String get sign_out {
-    return Intl.message('Выйти', name: 'sign_out', desc: '', args: []);
+  /// `Выйти из аккаунта`
+  String get sign_out_from_account {
+    return Intl.message(
+      'Выйти из аккаунта',
+      name: 'sign_out_from_account',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Пароль`
@@ -184,6 +189,16 @@ class S {
     return Intl.message(
       'Что-то пошло не так..',
       name: 'something_went_wrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Неожиданная ошибка при загрузке данных..`
+  String get something_went_wrong_when_data_loading {
+    return Intl.message(
+      'Неожиданная ошибка при загрузке данных..',
+      name: 'something_went_wrong_when_data_loading',
       desc: '',
       args: [],
     );
@@ -294,6 +309,41 @@ class S {
     return Intl.message(
       'Задача выполнена?',
       name: 'is_task_completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Загрузка..`
+  String get loading {
+    return Intl.message('Загрузка..', name: 'loading', desc: '', args: []);
+  }
+
+  /// `Обновить`
+  String get update {
+    return Intl.message('Обновить', name: 'update', desc: '', args: []);
+  }
+
+  /// `Задачи`
+  String get tasks {
+    return Intl.message('Задачи', name: 'tasks', desc: '', args: []);
+  }
+
+  /// `Профиль`
+  String get profile {
+    return Intl.message('Профиль', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Темная тема`
+  String get dart_theme {
+    return Intl.message('Темная тема', name: 'dart_theme', desc: '', args: []);
+  }
+
+  /// `Светлая тема`
+  String get light_theme {
+    return Intl.message(
+      'Светлая тема',
+      name: 'light_theme',
       desc: '',
       args: [],
     );

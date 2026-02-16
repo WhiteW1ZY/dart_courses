@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:to_do_app/data/mappers/user_mappr.dart/auth_mappr.dart';
+import 'package:to_do_app/data/mappers/user_mappr.dart/user_mappr.dart';
 import 'package:to_do_app/domain/entities/user_entity.dart';
 import 'package:to_do_app/domain/exceptions/authorization_exception.dart';
 import 'package:to_do_app/domain/repository/authorization_repository.dart';
@@ -9,7 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 @Injectable(as: AuthorizationRepository)
 class AuthorizationRepositoryImpl implements AuthorizationRepository {
   final FirebaseAuth _firebaseAuth;
-  final AuthMappr _mappr;
+  final UserMappr _mappr;
 
   const AuthorizationRepositoryImpl(this._firebaseAuth, this._mappr);
 

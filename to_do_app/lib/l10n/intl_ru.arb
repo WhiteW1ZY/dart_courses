@@ -7,7 +7,7 @@
     "registration": "Регистрация",
     "sign_up": "Зарегистрироваться",
     "sign_in": "Войти",
-    "sign_out": "Выйти",
+    "sign_out_from_account": "Выйти из аккаунта",
     "password": "Пароль",
     "login": "Логин", 
     "welcome": "Добро пожаловать!",
@@ -15,6 +15,7 @@
     "will_be_nice_to_meet_you": "Будет приятно познакомиться!",
     "create_an_account": "Создайте аккаунт!",
     "something_went_wrong": "Что-то пошло не так..",
+    "something_went_wrong_when_data_loading": "Неожиданная ошибка при загрузке данных..",
     "collection_is_empty_yet_add_fist_node": "Коллекция пока пуста.. \nДобавьте первую запись!",
     "my_todos": "Мои задачи",
     "add_todo": "Добавить задачу",
@@ -28,5 +29,11 @@
     "cannot_edit_task": "Не удалось обновить задание..",
     "completed": "Выполнено",
     "edit": "Редактировать",
-    "is_task_completed": "Задача выполнена?"
+    "is_task_completed": "Задача выполнена?",
+    "loading": "Загрузка..",
+    "update": "Обновить",
+    "tasks": "Задачи",
+    "profile": "Профиль",
+    "dart_theme": "Темная тема",
+    "light_theme": "Светлая тема"
 }
